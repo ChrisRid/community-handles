@@ -7,8 +7,8 @@ export const siteConfig = {
       href: "/",
     },
     {
-      title: "Members",
-      href: "/community",
+      title: "Fellas",
+      href: "/handle",
     },
     {
       title: "FAQ",
