@@ -41,12 +41,11 @@ export default async function CommunityPage({ params }: Props) {
           Fellas with the {domain} Handle
         </h1>
         <p className="max-w-[500px] text-lg text-muted-foreground sm:text-xl">
-          Want to join the {count} fellas of the {domain} handle? Get your own
-          &nbsp;
+          Want to join the {count} fellas who are using the
+          {domain} handle? &nbsp;{" "}
           <Link href="/" className="underline">
-            {domain}
+            Get your own
           </Link>
-          .
         </p>
 
         <LoadMore

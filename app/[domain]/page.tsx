@@ -109,6 +109,7 @@ export default async function IndexPage({
     }
   }
 
+  const handleVerify = () => {}
   return (
     <main className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-4">
@@ -150,7 +151,7 @@ export default async function IndexPage({
               {profile && (
                 <>
                   <p className="text-muted-forground mt-4 flex flex-row items-center gap-2 text-sm">
-                    <Check className="size-4 text-green-500" /> Account found
+                    <Check className="size-6 text-green-500" /> Account found
                   </p>
                   <Profile profile={profile} className="mt-4" />
                 </>
@@ -195,10 +196,12 @@ export default async function IndexPage({
               ) : (
                 <>
                   {newHandle && (
-                    <p className="text-muted-forground mt-4 flex flex-row items-center gap-2 text-sm">
-                      <Check className="size-4 text-green-500" />
-                      {newHandle} has been successfully created
-                    </p>
+                    <div className="mt-4 flex flex-row items-center gap-2 text-sm">
+                      <Check className="size-6 text-green-500" />
+                      <p className="flex-1">
+                        {newHandle} has been successfully created
+                      </p>
+                    </div>
                   )}
                 </>
               )}
