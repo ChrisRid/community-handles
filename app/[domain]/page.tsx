@@ -175,16 +175,8 @@ export default async function IndexPage({
                 Enter the {domain} handle that you would like to have, not
                 including the @. Must end with .fellas.social
                 <br />
-                <br />
-                {newHandle ? (
-                  <span style={{ color: "green" }}>
-                    {newHandle} has been successfully created
-                  </span>
-                ) : (
-                  ""
-                )}
               </p>
-              {error2 && (
+              {error2 ? (
                 <p className="text-sm text-red-500">
                   {(() => {
                     switch (error2) {
@@ -200,6 +192,15 @@ export default async function IndexPage({
                     }
                   })()}
                 </p>
+              ) : (
+                <>
+                  {newHandle && (
+                    <p className="text-muted-forground mt-4 flex flex-row items-center gap-2 text-sm">
+                      <Check className="size-4 text-green-500" />
+                      {newHandle} has been successfully created
+                    </p>
+                  )}
+                </>
               )}
             </div>
           </form>
