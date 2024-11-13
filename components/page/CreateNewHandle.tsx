@@ -113,9 +113,9 @@ const CreateNewHandleMain: FC<ButtonProps> = ({ handle, profile }) => {
         </div>
 
         <p className="text-sm text-muted-foreground">
-          Enter the {domain} handle that you would like to have, not including the @
-          Handles can only contain letters, numbers, and hyphens
-          Handles must end with .fellas.social
+          Enter a new {domain} handle, not including the @<br />
+          Can only contain letters, numbers, and hyphens.<br />
+          Handles must end with .fellas.social<br />
           <br />
         </p>
         {error ? (
