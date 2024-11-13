@@ -61,7 +61,7 @@ export default function CommunityPage() {
             {
               title: 'It says "Invalid Handle" when I type in my new handle:',
               content:
-                "Your new handle can only contain letters and numbers. It should appear in the format: [name].fellas.social and make sure 'fellas' is plural, ie 'fellas.social' not 'fella.social'",
+                "Your new handle can only contain letters, numbers and hyphens. It should appear in the format: [name].fellas.social and make sure 'fellas' is plural, ie 'fellas.social' not 'fella.social'",
             },
             {
               title: "How do I know this is trustworthy?",
