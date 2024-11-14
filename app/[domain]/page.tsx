@@ -186,6 +186,12 @@ export default async function IndexPage({
               </a>
             </div>
             <p>
+              Want a different NAFO related handle? Check out&nbsp;
+              <a href="https://mainbastards.online/" target="_blank">
+                MainBastards.online
+              </a>
+            </p>
+            <p>
               The community-handles project was originally created by mozzius,
               and adapted and hosted by ChrisRid for the NAFO fellas.
             </p>
