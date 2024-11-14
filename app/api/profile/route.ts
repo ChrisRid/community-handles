@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     })
     followers = res2.data.followers.length
     followers_fellas = res2.data.followers.filter((el) =>
-      el.handle.endsWith(".fellas.socal")
+      el.handle.endsWith(".fellas.social")
     ).length
   }
 
