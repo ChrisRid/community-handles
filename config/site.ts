@@ -15,8 +15,8 @@ export const siteConfig = {
       href: "/faq",
     },
     {
-      title: "NAFO Related Handles",
-      href: "https://mainbastards.online",
+      title: "Other Related Handles",
+      href: "/otherhandles",
     },
   ],
   links: {
