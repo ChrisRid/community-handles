@@ -14,6 +14,10 @@ export const siteConfig = {
       title: "FAQ",
       href: "/faq",
     },
+    {
+      title: "NAFO Related Handles",
+      href: "https://mainbastards.online",
+    },
   ],
   links: {
     github: "https://github.com/ChrisRid/community-handles",
