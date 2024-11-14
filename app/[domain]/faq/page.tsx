@@ -45,12 +45,13 @@ export default function CommunityPage() {
               content: (
                 <div>
                   <p>
-                    Please ensure that you have copied your existing handle exactly 
-                    as it appears, without the @ symbol at the beginning. Remember, 
-                    handles are case sensitive, so double-check for any uppercase 
-                    or lowercase differences. If Bluesky servers are experiencing 
-                    high demand, you may need to wait a moment and try again. For 
-                    additional help, you can tag @chrisrid.fellas.social on Bluesky.
+                    Please ensure that you have copied your existing handle
+                    exactly as it appears, without the @ symbol at the
+                    beginning. Remember, handles are case sensitive, so
+                    double-check for any uppercase or lowercase differences. If
+                    Bluesky servers are experiencing high demand, you may need
+                    to wait a moment and try again. For additional help, you can
+                    tag @chrisrid.fellas.social on Bluesky.
                   </p>
                 </div>
               ),
@@ -100,6 +101,34 @@ export default function CommunityPage() {
                   >
                     https://github.com/mozzius/community-handles
                   </a>
+                </div>
+              ),
+            },
+            {
+              title: "What is this handle for and how did it get here?",
+              content: (
+                <div>
+                  This handle is intended for use by the NAFO Fellas. More
+                  information about the fellas can be found on their official
+                  website at{" "}
+                  <a
+                    href="https://nafo-ofan.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    https://nafo-ofan.org
+                  </a>
+                  . The handle came about during the big transition from X to
+                  Bluesky. A unique feature of Bluesky is that people can use
+                  their own domain names as Bluesky handles. Samuel, one of the
+                  Bluesky developers, created a template service allowing
+                  communities to create their own unique handles. The Taylor
+                  Swift fan club was quick to adopt this, creating the
+                  swifties.social handle. A few NAFO fellas noticed and
+                  suggested that the fellas could have their own handle too,
+                  using fellas.social as the domain. A few days later,
+                  fellas.social was born.
                 </div>
               ),
             },
