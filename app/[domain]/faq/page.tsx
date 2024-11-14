@@ -45,15 +45,12 @@ export default function CommunityPage() {
               content: (
                 <div>
                   <p>
-                    Make sure you copied your existing handle exactly as it
-                    appears. It is case-sensitive so check uppercase and
-                    lowercase letters
-                  </p>
-                  <p>
-                    Make sure that when you enter your existing handle you
-                    don&apos;t include the &apos;@&apos; before it. If you still
-                    have issues, tag @chrisrid.fellas.social on Bluesky for
-                    help.
+                    Please ensure that you have copied your existing handle exactly 
+                    as it appears, without the @ symbol at the beginning. Remember, 
+                    handles are case sensitive, so double-check for any uppercase 
+                    or lowercase differences. If Bluesky servers are experiencing 
+                    high demand, you may need to wait a moment and try again. For 
+                    additional help, you can tag @chrisrid.fellas.social on Bluesky.
                   </p>
                 </div>
               ),
