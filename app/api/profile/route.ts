@@ -11,7 +11,7 @@ export async function POST(req: Request) {
   let data: AppBskyActorDefs.ProfileView | undefined
   if (success) {
     const actor = await agent.getProfile({
-      actor: `${handle}.bsky.social`,
+      actor: handle.includes(".") ? handle : `${handle}.bsky.social`,
     })
     success = actor.success
     data = actor.data

@@ -81,7 +81,6 @@ const Step1: FC<ButtonProps> = ({ onUpdatedProfile }) => {
             placeholder="example.bsky.social"
             value={handle}
             onChange={(e) => setHandle(e.target.value)}
-            suffix={`.bsky.social`}
             required
           />
           <Button type="submit" disabled={loading}>
