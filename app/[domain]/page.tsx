@@ -1,10 +1,9 @@
-import { useState } from "react"
 import Image from "next/image"
 import ImageCoffeQR from "@/assets/images/CoffeQR.png"
 import ImageNAFO from "@/assets/images/NAFO.png"
 
+import { prisma } from "@/lib/db"
 import GetYourHandle from "@/components/page/Home/GetYourHandle"
-import { Stage } from "@/components/stage"
 
 export function generateMetadata({ params }: { params: { domain: string } }) {
   const domain = params.domain
@@ -28,6 +27,10 @@ export default async function IndexPage({
 }) {
   const domain = params.domain
 
+  const totalUsers = await prisma.user.count({
+    where: { domain: { name: domain } },
+  })
+
   return (
     <main className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-4">
@@ -41,7 +44,7 @@ export default async function IndexPage({
         </p>
       </div>
       <div>
-        <GetYourHandle />
+        <GetYourHandle totalUsers={totalUsers} />
 
         <div className="max-w-lg text-sm">
           <p className="mt-2 max-w-lg text-center text-sm">

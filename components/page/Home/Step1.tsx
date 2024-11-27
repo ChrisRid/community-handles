@@ -6,8 +6,6 @@ import { AppBskyActorDefs } from "@atproto/api"
 import { Check, X } from "lucide-react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
-import { CREATE_HANDLE_ALLOW_FOLLOWS_MIN } from "@/lib/constant"
-
 import Loading from "../../loading"
 import { Profile } from "../../profile"
 import { Button } from "../../ui/button"
@@ -15,12 +13,18 @@ import { Input } from "../../ui/input"
 
 export type ButtonProps = PropsWithChildren<{
   onUpdatedProfile?: (v?: AppBskyActorDefs.ProfileView) => void
+  totalUsers: number
 }>
 
-const Step1: FC<ButtonProps> = ({ onUpdatedProfile }) => {
+const Step1: FC<ButtonProps> = ({ onUpdatedProfile, totalUsers }) => {
   const searchParams = useSearchParams()
 
   const { executeRecaptcha } = useGoogleReCaptcha()
+
+  const CREATE_HANDLE_ALLOW_FOLLOWS = useMemo(
+    () => Math.min(Math.abs(Math.floor((totalUsers - 1) / 100)), 9),
+    [totalUsers]
+  )
 
   const [handle, setHandle] = useState(searchParams.get("handle") || "")
   const [profile, setProfile] = useState<AppBskyActorDefs.ProfileView>()
@@ -58,7 +62,7 @@ const Step1: FC<ButtonProps> = ({ onUpdatedProfile }) => {
         }
         setFollowers(data?.followers)
         setFollowersF(data?.followers_fellas)
-        if (data?.followers_fellas < CREATE_HANDLE_ALLOW_FOLLOWS_MIN) {
+        if (data?.followers_fellas < CREATE_HANDLE_ALLOW_FOLLOWS) {
           setError("no_follows")
         } else {
           if (data.profile) {
@@ -91,11 +95,11 @@ const Step1: FC<ButtonProps> = ({ onUpdatedProfile }) => {
       case "404":
         return "Handle not found - please try again"
       case "no_follows":
-        return `You must be followed by at least ${CREATE_HANDLE_ALLOW_FOLLOWS_MIN} other fella with a .fellas.social handle before you can create your own`
+        return `You must be followed by at least ${CREATE_HANDLE_ALLOW_FOLLOWS} other fella with a .fellas.social handle before you can create your own`
       default:
         return "Something is wrong"
     }
-  }, [error])
+  }, [error, CREATE_HANDLE_ALLOW_FOLLOWS])
 
   return (
     <form onSubmit={handleFormSubmit}>
