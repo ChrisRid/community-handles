@@ -1,5 +1,4 @@
 import { type Metadata, type Viewport } from "next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getMessages } from "next-intl/server"
 
